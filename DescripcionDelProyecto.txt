@@ -1,0 +1,13 @@
+DESCRIPCIÓN DEL PROYECTO
+
+El presente proyecto consiste en el desarrollo de un sistema web denominado Manos Solidarias, cuyo propósito es facilitar la administración y el control de la distribución de ayuda alimentaria destinada a personas y familias en condición de vulnerabilidad. La aplicación busca brindar una herramienta sencilla y organizada que permita gestionar la información relacionada con los beneficiarios, los recursos disponibles y las entregas realizadas, mejorando el seguimiento de las ayudas y el control del inventario.
+
+El sistema permite registrar, consultar, modificar y eliminar beneficiarios, registrando información como la identificación, el nombre completo, la comunidad de procedencia, la cantidad de integrantes del hogar y la prioridad social asignada. Asimismo, incluye un módulo para administrar los recursos alimenticios disponibles, donde se almacena información como el código del recurso, nombre, categoría, unidad de medida, cantidad disponible y costo unitario.
+
+Otro componente importante del sistema corresponde al registro de entregas alimentarias. Este módulo permite asociar un beneficiario con un recurso alimenticio específico, indicando la cantidad entregada, la fecha de la entrega y el responsable encargado de realizarla. Además, el sistema calcula automáticamente el valor económico de cada entrega y actualiza el inventario descontando las cantidades entregadas. En caso de eliminar una entrega, el inventario es restaurado automáticamente para mantener la consistencia de la información.
+
+Como apoyo a la toma de decisiones, la aplicación incorpora un módulo de reportes que permite consultar indicadores relevantes, entre ellos la cantidad de beneficiarios por comunidad, los recursos con inventario bajo, los recursos más entregados y el costo total de la ayuda alimentaria distribuida. Estos reportes ofrecen información útil para el seguimiento de la gestión realizada por la organización.
+
+El proyecto fue desarrollado siguiendo una arquitectura por capas, separando las responsabilidades en entidades, repositorios, servicios, controladores y esquemas de validación. Para el desarrollo del backend se utilizó Python con el framework FastAPI, junto con SQLAlchemy como ORM y MySQL como sistema gestor de bases de datos. El frontend fue implementado utilizando HTML5, CSS3 y JavaScript, comunicándose con el backend mediante una API REST.
+
+En conjunto, Manos Solidarias constituye una solución informática que facilita la administración de procesos relacionados con la ayuda alimentaria, proporcionando una interfaz intuitiva, validaciones de datos y mecanismos de consulta que contribuyen a una gestión más eficiente y organizada de los recursos disponibles.

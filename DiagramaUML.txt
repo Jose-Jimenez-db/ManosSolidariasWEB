@@ -1,0 +1,44 @@
++----------------------------------+
+|          UsuarioORM              |
++----------------------------------+
+| - id                             |
+| - username                       |
+| - password_hash                  |
+| - rol                            |
++----------------------------------+
+
+
++----------------------------------+
+|       BeneficiarioORM            |
++----------------------------------+
+| - identificacion                 |
+| - nombre_completo                |
+| - comunidad                      |
+| - integrantes_hogar              |
+| - prioridad_social               |
++----------------------------------+
+
+
++----------------------------------+
+|    RecursoAlimenticioORM         |
++----------------------------------+
+| - codigo_recurso                 |
+| - nombre                         |
+| - categoria                      |
+| - unidad_medida                  |
+| - cantidad_disponible            |
+| - costo_unitario                 |
++----------------------------------+
+
+
++----------------------------------+
+|   EntregaAlimentariaORM          |
++----------------------------------+
+| - codigo_entrega                 |
+| - identificacion_beneficiario    |
+| - codigo_recurso                 |
+| - cantidad_entregada             |
+| - fecha                          |
+| - responsable_entrega            |
+| - valor_economico                |
++----------------------------------+
