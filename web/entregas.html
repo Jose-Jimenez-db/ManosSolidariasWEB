@@ -1,0 +1,123 @@
+<!--
+    Este archivo define la interfaz gráfica para la gestión de entregas
+    alimentarias del sistema Manos Solidarias. Contiene los formularios para
+    registrar y editar entregas, la sección de búsqueda por código de entrega
+    y la tabla donde se muestra el historial de entregas registradas,
+    utilizando los estilos y funciones proporcionados por el sistema.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manos Solidarias - Entregas Alimentarias</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="principal.html" class="marca">Manos Solidarias</a>
+        <nav>
+            <a href="principal.html">Inicio</a>
+            <a href="beneficiarios.html">Beneficiarios</a>
+            <a href="recursos.html">Recursos</a>
+            <a href="entregas.html" class="activo">Entregas</a>
+            <a href="reportes.html">Reportes</a>
+            <span class="usuario-info" id="usuarioInfo"></span>
+            <button class="btn-secundario btn-pequeno" id="btnCerrarSesion">Cerrar sesión</button>
+        </nav>
+    </header>
+
+    <div class="contenedor">
+
+        <div class="tarjeta">
+            <h2 id="tituloFormulario">Registrar Entrega</h2>
+            <form id="entregaForm">
+                <div class="fila-form">
+                    <div class="campo">
+                        <label for="codigoEntrega">Código de entrega</label>
+                        <input type="text" id="codigoEntrega" required>
+                    </div>
+                    <div class="campo">
+                        <label for="beneficiarioSelect">Beneficiario</label>
+                        <select id="beneficiarioSelect" required>
+                            <option value="">Cargando...</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="recursoSelect">Recurso alimenticio</label>
+                        <select id="recursoSelect" required>
+                            <option value="">Cargando...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="fila-form">
+                    <div class="campo">
+                        <label for="cantidadEntregada">Cantidad a entregar</label>
+                        <input type="number" id="cantidadEntregada" min="1" required>
+                    </div>
+                    <div class="campo">
+                        <label for="fecha">Fecha</label>
+                        <input type="date" id="fecha" required>
+                    </div>
+                    <div class="campo">
+                        <label for="responsableEntrega">Responsable</label>
+                        <input type="text" id="responsableEntrega" required>
+                    </div>
+                </div>
+                <p class="pista-login" id="pistaEdicion" style="text-align:left; display:none;">
+                    En modo edición solo se puede modificar la fecha y el responsable.
+                </p>
+                <div class="acciones-form">
+                    <button type="submit" class="btn-primario">Guardar</button>
+                    <button type="button" id="btnCancelar" class="btn-secundario hidden">Cancelar edición</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Buscar por código de entrega</h2>
+            <div class="fila-form">
+                <div class="campo">
+                    <label for="buscarCodigoEntrega">Código de entrega</label>
+                    <input type="text" id="buscarCodigoEntrega" placeholder="Ej: E-001">
+                </div>
+            </div>
+            <div class="acciones-form">
+                <button id="btnBuscar" class="btn-acento">Buscar</button>
+                <button id="btnMostrarTodos" class="btn-secundario">Mostrar todas</button>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Historial de entregas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Beneficiario</th>
+                        <th>Recurso</th>
+                        <th>Cantidad</th>
+                        <th>Fecha</th>
+                        <th>Responsable</th>
+                        <th>Valor (₡)</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaEntregas"></tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div id="messageBox" class="hidden"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/entregas.js"></script>
+
+</body>
+
+</html>

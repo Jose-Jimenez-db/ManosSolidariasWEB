@@ -1,0 +1,81 @@
+<!--
+    Este archivo define la interfaz gráfica para la visualización de los
+    reportes del sistema Manos Solidarias. Contiene las opciones para generar
+    y mostrar los diferentes reportes disponibles, proporcionando
+    información relacionada con los beneficiarios, el inventario de recursos
+    alimenticios, las entregas realizadas y el costo total de la ayuda
+    distribuida.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manos Solidarias - Reportes</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="principal.html" class="marca">Manos Solidarias</a>
+        <nav>
+            <a href="principal.html">Inicio</a>
+            <a href="beneficiarios.html">Beneficiarios</a>
+            <a href="recursos.html">Recursos</a>
+            <a href="entregas.html">Entregas</a>
+            <a href="reportes.html" class="activo">Reportes</a>
+            <span class="usuario-info" id="usuarioInfo"></span>
+            <button class="btn-secundario btn-pequeno" id="btnCerrarSesion">Cerrar sesión</button>
+        </nav>
+    </header>
+
+    <div class="contenedor">
+
+        <div class="bienvenida">
+            <h1>Reportes</h1>
+            <p>Indicadores para apoyar la toma de decisiones sobre la ayuda distribuida.</p>
+        </div>
+
+        <div class="tarjeta">
+            <h2>1. Beneficiarios por comunidad</h2>
+            <button id="btnReporte1" class="btn-primario">Generar reporte</button>
+            <div class="resultado-reporte" id="resultadoReporte1"></div>
+        </div>
+
+        <div class="tarjeta">
+            <h2>2. Recursos con inventario bajo</h2>
+            <div class="fila-reporte-form">
+                <div class="campo">
+                    <label for="limiteInventario">Límite mínimo</label>
+                    <input type="number" id="limiteInventario" value="10" min="0">
+                </div>
+                <button id="btnReporte2" class="btn-primario">Generar reporte</button>
+            </div>
+            <div class="resultado-reporte" id="resultadoReporte2"></div>
+        </div>
+
+        <div class="tarjeta">
+            <h2>3. Recursos más entregados</h2>
+            <button id="btnReporte3" class="btn-primario">Generar reporte</button>
+            <div class="resultado-reporte" id="resultadoReporte3"></div>
+        </div>
+
+        <div class="tarjeta">
+            <h2>4. Costo total de la ayuda distribuida</h2>
+            <button id="btnReporte4" class="btn-primario">Generar reporte</button>
+            <div class="resultado-reporte" id="resultadoReporte4"></div>
+        </div>
+
+    </div>
+
+    <div id="messageBox" class="hidden"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/reportes.js"></script>
+
+</body>
+
+</html>

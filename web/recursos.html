@@ -1,0 +1,115 @@
+<!--
+    Este archivo define la interfaz gráfica para la gestión de recursos
+    alimenticios del sistema Manos Solidarias. Contiene los formularios para
+    registrar y editar recursos, la sección de búsqueda por código de
+    recurso y la tabla donde se muestra el inventario de recursos
+    disponibles, utilizando los estilos y funciones proporcionados por el
+    sistema.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manos Solidarias - Recursos Alimenticios</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="principal.html" class="marca">Manos Solidarias</a>
+        <nav>
+            <a href="principal.html">Inicio</a>
+            <a href="beneficiarios.html">Beneficiarios</a>
+            <a href="recursos.html" class="activo">Recursos</a>
+            <a href="entregas.html">Entregas</a>
+            <a href="reportes.html">Reportes</a>
+            <span class="usuario-info" id="usuarioInfo"></span>
+            <button class="btn-secundario btn-pequeno" id="btnCerrarSesion">Cerrar sesión</button>
+        </nav>
+    </header>
+
+    <div class="contenedor">
+
+        <div class="tarjeta">
+            <h2 id="tituloFormulario">Registrar Recurso Alimenticio</h2>
+            <form id="recursoForm">
+                <div class="fila-form">
+                    <div class="campo">
+                        <label for="codigoRecurso">Código</label>
+                        <input type="text" id="codigoRecurso" required>
+                    </div>
+                    <div class="campo">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    <div class="campo">
+                        <label for="categoria">Categoría</label>
+                        <input type="text" id="categoria" placeholder="Ej: Granos, Lácteos..." required>
+                    </div>
+                </div>
+                <div class="fila-form">
+                    <div class="campo">
+                        <label for="unidadMedida">Unidad de medida</label>
+                        <input type="text" id="unidadMedida" placeholder="Ej: kg, litro..." required>
+                    </div>
+                    <div class="campo">
+                        <label for="cantidadDisponible">Cantidad disponible</label>
+                        <input type="number" id="cantidadDisponible" min="0" required>
+                    </div>
+                    <div class="campo">
+                        <label for="costoUnitario">Costo unitario (₡)</label>
+                        <input type="number" id="costoUnitario" min="0" step="0.01" required>
+                    </div>
+                </div>
+                <div class="acciones-form">
+                    <button type="submit" class="btn-primario">Guardar</button>
+                    <button type="button" id="btnCancelar" class="btn-secundario hidden">Cancelar edición</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Buscar por código de recurso</h2>
+            <div class="fila-form">
+                <div class="campo">
+                    <label for="buscarCodigo">Código</label>
+                    <input type="text" id="buscarCodigo" placeholder="Ej: R-001">
+                </div>
+            </div>
+            <div class="acciones-form">
+                <button id="btnBuscarCodigo" class="btn-acento">Buscar</button>
+                <button id="btnMostrarTodos" class="btn-secundario">Mostrar todos</button>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Inventario de recursos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Disponible</th>
+                        <th>Costo unitario</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaRecursos"></tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div id="messageBox" class="hidden"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/recursos.js"></script>
+
+</body>
+
+</html>

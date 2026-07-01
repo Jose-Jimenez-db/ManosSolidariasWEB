@@ -1,0 +1,72 @@
+<!--
+    Este archivo define la interfaz gráfica de la página principal del
+    sistema Manos Solidarias. Presenta la pantalla de bienvenida y el menú
+    de navegación hacia los diferentes módulos del sistema, permitiendo al
+    usuario acceder a la gestión de beneficiarios, recursos alimenticios,
+    entregas y reportes.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manos Solidarias - Inicio</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="principal.html" class="marca">Manos Solidarias</a>
+        <nav>
+            <a href="principal.html" class="activo">Inicio</a>
+            <a href="beneficiarios.html">Beneficiarios</a>
+            <a href="recursos.html">Recursos</a>
+            <a href="entregas.html">Entregas</a>
+            <a href="reportes.html">Reportes</a>
+            <span class="usuario-info" id="usuarioInfo"></span>
+            <button class="btn-secundario btn-pequeno" id="btnCerrarSesion">Cerrar sesión</button>
+        </nav>
+    </header>
+
+    <div class="contenedor">
+
+        <div class="bienvenida">
+            <h1>Bienvenido(a)</h1>
+            <p>Sistema de gestión de ayuda alimentaria para comunidades en situación de vulnerabilidad.</p>
+        </div>
+
+        <div class="cuadricula-modulos">
+            <a href="beneficiarios.html" class="tarjeta-modulo">
+                <h3>Beneficiarios</h3>
+                <p>Registrar y consultar a las familias y personas que reciben ayuda.</p>
+            </a>
+
+            <a href="recursos.html" class="tarjeta-modulo">
+                <h3>Recursos Alimenticios</h3>
+                <p>Administrar el inventario de alimentos disponibles para donación.</p>
+            </a>
+
+            <a href="entregas.html" class="tarjeta-modulo">
+                <h3>Entregas Alimentarias</h3>
+                <p>Registrar la entrega de recursos a un beneficiario específico.</p>
+            </a>
+
+            <a href="reportes.html" class="tarjeta-modulo">
+                <h3>Reportes</h3>
+                <p>Visualizar estadísticas e indicadores de la ayuda distribuida.</p>
+            </a>
+        </div>
+
+    </div>
+
+    <div id="messageBox" class="hidden"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/principal.js"></script>
+
+</body>
+
+</html>

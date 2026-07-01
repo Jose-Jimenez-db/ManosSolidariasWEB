@@ -1,0 +1,115 @@
+<!--
+    Este archivo define la interfaz gráfica para la gestión de beneficiarios
+    del sistema Manos Solidarias. Contiene los formularios para registrar y
+    editar beneficiarios, la sección de búsqueda por identificación y la
+    tabla donde se muestran los beneficiarios registrados, utilizando los
+    estilos y funciones proporcionados por el sistema.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manos Solidarias - Beneficiarios</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="principal.html" class="marca">Manos Solidarias</a>
+        <nav>
+            <a href="principal.html">Inicio</a>
+            <a href="beneficiarios.html" class="activo">Beneficiarios</a>
+            <a href="recursos.html">Recursos</a>
+            <a href="entregas.html">Entregas</a>
+            <a href="reportes.html">Reportes</a>
+            <span class="usuario-info" id="usuarioInfo"></span>
+            <button class="btn-secundario btn-pequeno" id="btnCerrarSesion">Cerrar sesión</button>
+        </nav>
+    </header>
+
+    <div class="contenedor">
+
+        <div class="tarjeta">
+            <h2 id="tituloFormulario">Registrar Beneficiario</h2>
+            <form id="beneficiarioForm">
+                <div class="fila-form">
+                    <div class="campo">
+                        <label for="identificacion">Identificación</label>
+                        <input type="text" id="identificacion" required>
+                    </div>
+                    <div class="campo">
+                        <label for="nombreCompleto">Nombre completo</label>
+                        <input type="text" id="nombreCompleto" required>
+                    </div>
+                </div>
+                <div class="fila-form">
+                    <div class="campo">
+                        <label for="comunidad">Comunidad</label>
+                        <input type="text" id="comunidad" required>
+                    </div>
+                    <div class="campo">
+                        <label for="integrantesHogar">Integrantes del hogar</label>
+                        <input type="number" id="integrantesHogar" min="1" required>
+                    </div>
+                    <div class="campo">
+                        <label for="prioridadSocial">Prioridad social</label>
+                        <select id="prioridadSocial" required>
+                            <option value="">Seleccione una prioridad...</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Media">Media</option>
+                            <option value="Baja">Baja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="acciones-form">
+                    <button type="submit" class="btn-primario">Guardar</button>
+                    <button type="button" id="btnCancelar" class="btn-secundario hidden">Cancelar edición</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Buscar por identificación del beneficiario</h2>
+            <div class="fila-form">
+                <div class="campo">
+                    <label for="buscarIdentificacion">Identificación</label>
+                    <input type="text" id="buscarIdentificacion" placeholder="Ej: B-001">
+                </div>
+            </div>
+            <div class="acciones-form">
+                <button id="btnBuscar" class="btn-acento">Buscar</button>
+                <button id="btnMostrarTodos" class="btn-secundario">Mostrar todos</button>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Listado de beneficiarios</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Identificación</th>
+                        <th>Nombre</th>
+                        <th>Comunidad</th>
+                        <th>Integrantes</th>
+                        <th>Prioridad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaBeneficiarios"></tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div id="messageBox" class="hidden"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/beneficiarios.js"></script>
+
+</body>
+
+</html>

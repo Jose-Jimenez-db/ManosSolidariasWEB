@@ -1,0 +1,51 @@
+<!--
+    Este archivo define la interfaz gráfica para el inicio de sesión del
+    sistema Manos Solidarias. Contiene el formulario de autenticación donde
+    los usuarios ingresan sus credenciales para acceder a las diferentes
+    funcionalidades del sistema, utilizando los estilos y funciones
+    proporcionados por la aplicación.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manos Solidarias - Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <div class="pantalla-login">
+        <div class="tarjeta-login">
+            <h1>Manos Solidarias</h1>
+            <p class="subtitulo">Sistema de gestión de ayuda alimentaria</p>
+
+            <form id="loginForm">
+                <div class="campo">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" placeholder="Usuario" required>
+                </div>
+                <div class="campo">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="Contraseña" required>
+                </div>
+                <button type="submit" class="btn-primario">Iniciar sesión</button>
+            </form>
+
+            <p class="pista-login">
+                Usuario por defecto: <strong>admin</strong> <br> Contraseña: <strong>admin123</strong>
+            </p>
+        </div>
+    </div>
+
+    <div id="messageBox" class="hidden"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>
