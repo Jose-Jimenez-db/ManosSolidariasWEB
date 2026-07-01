@@ -1,0 +1,305 @@
+/*
+    Este archivo define los estilos generales de la interfaz gráfica del
+    sistema Manos Solidarias. Contiene la configuración visual de los
+    diferentes componentes de la aplicación, como formularios, tablas,
+    botones, menús de navegación, tarjetas, reportes y diseño responsivo,
+    proporcionando una apariencia uniforme y una mejor experiencia de uso.
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f8fc;
+    color: #334155;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background: #3b82f6;
+    color: white;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.navbar .marca {
+    font-size: 1.15rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.navbar nav a.activo {
+    text-decoration: underline;
+}
+
+.navbar .usuario-info {
+    font-size: 0.85rem;
+}
+
+.contenedor {
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.tarjeta {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.tarjeta h2 {
+    margin-top: 0;
+    color: #2563eb;
+    font-size: 1.1rem;
+}
+
+.fila-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 160px;
+}
+
+.campo label {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+input, select {
+    padding: 9px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.acciones-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 9px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-primario {
+    background: #3b82f6;
+    color: white;
+}
+
+.btn-acento {
+    background: #60a5fa;
+    color: white;
+}
+
+.btn-secundario {
+    background: #e2e8f0;
+    color: #1f2937;
+}
+
+.btn-peligro {
+    background: #60a5fa;
+    color: white;
+}
+
+.editar {
+    background: #2e7d32;
+    color: white;
+}
+
+.btn-pequeno {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+}
+
+table th {
+    color: #64748b;
+}
+
+.celda-acciones {
+    display: flex;
+    gap: 6px;
+}
+
+.sin-datos {
+    text-align: center;
+    color: #64748b;
+    padding: 18px;
+}
+
+#messageBox {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    min-width: 240px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.pantalla-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4f8fc;
+}
+
+.tarjeta-login {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 30px 26px;
+    width: 100%;
+    max-width: 340px;
+    text-align: center;
+}
+
+.tarjeta-login h1 {
+    color: #2563eb;
+    font-size: 1.3rem;
+    margin: 6px 0 4px 0;
+}
+
+.tarjeta-login p.subtitulo {
+    color: #64748b;
+    font-size: 0.85rem;
+    margin: 0 0 18px 0;
+}
+
+.tarjeta-login .campo {
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.tarjeta-login button {
+    width: 100%;
+}
+
+.pista-login {
+    margin-top: 16px;
+    font-size: 0.78rem;
+    color: #64748b;
+}
+
+.bienvenida {
+    margin-bottom: 20px;
+}
+
+.bienvenida h1 {
+    color: #2563eb;
+}
+
+.bienvenida p {
+    color: #64748b;
+}
+
+.cuadricula-modulos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+}
+
+.tarjeta-modulo {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 18px;
+    text-decoration: none;
+    color: #334155;
+    display: block;
+}
+
+.tarjeta-modulo h3 {
+    margin: 0 0 4px 0;
+    color: #2563eb;
+}
+
+.tarjeta-modulo p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.resultado-reporte {
+    margin-top: 14px;
+}
+
+.metrica-grande {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.fila-reporte-form {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+}
+
+@media (max-width: 640px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .campo {
+        min-width: 100%;
+    }
+}
